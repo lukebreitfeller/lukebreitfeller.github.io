@@ -1,0 +1,294 @@
+/* Header style information. */
+
+header {
+    background-color: #A14603;
+    height: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header h1 {
+    margin-top: 0px;
+    margin-left: 25px;
+    font-family: "Rouge Script";
+}
+
+/* Body style information */
+
+/* Type-level rules in common across pages */
+
+body {
+    background-color: #FFC692;
+    color: white;
+    padding-top: 240px;
+    font-family: Roboto;
+}
+    
+h1 {
+    font-size: 130px;
+    text-shadow: 2px 2px black;
+}
+
+h2 {
+    font-size: 150px;
+    text-shadow: 2px 2px black;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+p {
+    font-size: 24px;
+}
+
+a {
+    color: white;
+}
+
+/* Class rules in common across all pages */
+
+.emphatic {
+    text-shadow: 1px 1px black;
+}
+
+/* Class rules for home page */
+
+.bottomrow {
+    display: grid;
+    grid-template-columns: 550px 550px;
+    grid-template-rows: 400px;
+    grid-gap: 100px;
+    justify-items: center;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+}
+
+/* Class rules for display page */
+/* Also contains class/type rules */
+
+.productdisplay {
+    background-color: chocolate;
+    display: grid;
+    grid-template-rows: 20px 300px 170px 50px;
+}
+
+.productdisplay img {
+    margin-top: 40px;
+    margin-left: 80px;
+    object-fit: fill;
+    width: 250px;
+    height: 250px;
+}
+
+.productdisplay p {
+    color: black;
+    margin-top: 0px;
+    margin-left: 40px;
+    max-width: 330px;
+}
+
+.productdisplay label {
+    color: black;
+    margin-top: 0px;
+    margin-left: 40px;
+    font-size: 24px;
+}
+
+.displayselect {
+    display: grid;
+    grid-template-rows: 30px 30px;
+    grid-template-columns: 200px 175px;
+    grid-gap: 5px;
+}
+
+.displayaddtocart {
+    background-color: #A14603;
+    margin: auto;
+    height: 40px;
+    width: 250px;
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+}
+
+.displayaddtocart p {
+    color: white;
+    margin-top: 5px;
+    margin-left: 0px;
+}
+
+.displaytext a {
+    color: black;
+}
+
+/* Class rules for product browse page */
+/* Also contains class/type and class/class rules */
+
+.detailcontainer {
+    height: 400px;
+    width: 450px;
+    position: relative;
+}
+
+.detailcontainer img {
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.detailcontainer .priceval {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 48px;
+    text-shadow: 2px 2px black;
+}
+
+.totalprice h3 {
+    font-size: 48px;
+    text-shadow: 2px 2px black;
+    margin-left: 75px;
+}
+
+
+.detailbutton {
+    background-color: #A14603;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+}
+
+.detailbutton p {
+    font-size: 30px;
+}
+
+/* ID-level rules for all pages */
+
+#banner {
+    background-image: url("bunbackground2.jpg");
+    background-size: cover;
+    white-space: nowrap;
+    height: 165px;
+    width: 1500px;
+}
+
+#navbar {
+    display: grid;
+    grid-template-columns: 700px 700px;
+}
+
+#navbar h3 {
+    margin-left: 50px;
+}
+
+/* ID-level rules for homepage */
+
+#productlink {
+    background-image: url("bakery_img.jpg");
+    background-position: center;
+    margin-left: 50px;
+    padding-left: 50px;
+    height: 245px;
+    width: 1200px;
+}
+
+#productlink h2{
+    margin-top: 20px;
+    padding-top: 30px;
+}
+
+#visitdelivery {
+    display: grid;
+    grid-template-rows: 60px 250px;
+    grid-template-columns: 250px 250px;
+    grid-gap: 20px;
+}
+
+#visitdelivery img{
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    /*width: 100%;
+    max-height: 100%;*/
+}
+
+#visitdeliveryaddress {
+    text-align: center;
+}
+
+/* ID-level rules for product browse page */
+
+#productbrowse {
+    margin-left: 50px;
+}
+
+#allproducts {
+    padding-top: 25px;
+    display: grid;
+    grid-template-rows: 550px 550px;
+    grid-template-columns: 410px 410px 410px;
+    grid-gap: 20px;
+}
+
+/* ID-level rules for product detail page */
+
+#productdetails {
+    display: grid;
+    grid-template-columns: 500px 750px;
+    grid-gap: 10px;
+    margin-top: 50px;
+    margin-left: 75px;
+}
+
+#detailleft p {
+    max-width: 450px;
+}
+
+#detailright h2 {
+    font-size: 54px;
+    margin-top: 0px;
+}
+
+#detailrighttop {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 50px 50px;
+    grid-gap: 50px;
+}
+
+#detailrighttop label {
+    font-size: 48px;
+    text-shadow: 2px 2px black;
+}
+
+#detailrightbottom {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-gap: 75px;
+    margin-left: 25px;
+}
+
+/* Footer style information */
+
+footer {
+    margin-top: 50px;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+    max-width: 300px;
+}
+
+#foottop {
+    padding-bottom: 50px;
+}
