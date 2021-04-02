@@ -46,6 +46,11 @@ p {
 
 a {
     color: white;
+    text-decoration: none;
+}
+
+button {
+    color: white;
 }
 
 /* Class rules in common across all pages */
@@ -113,19 +118,19 @@ a {
     text-align: center;
     border-style: solid;
     border-color: black;
+    font-size: 24px;
+    margin-top: 5px;
 }
 
-.displayaddtocart p {
-    color: white;
-    margin-top: 5px;
-    margin-left: 0px;
+.displaytext p {
+    margin-bottom: 5px;
 }
 
 .displaytext a {
     color: black;
 }
 
-/* Class rules for product browse page */
+/* Class rules for product details page */
 /* Also contains class/type and class/class rules */
 
 .detailcontainer {
@@ -156,22 +161,70 @@ a {
     margin-left: 75px;
 }
 
-
 .detailbutton {
     background-color: #A14603;
     border-style: solid;
     border-color: black;
+    font-size: 30px;
     text-align: center;
 }
 
-.detailbutton p {
+/* Class-level rules for cart page */
+
+.cartitem {
+    background-color: chocolate;
+    display: grid;
+    grid-template-columns: 300px 600px 170px;
+    grid-gap: 20px;
+}
+
+.cartitem img {
+    margin-top: 20px;
+    margin-left: 40px;
+    object-fit: fill;
+    width: 250px;
+    height: 250px;
+}
+
+.cartitem p {
+    color: black;
+    font-size: 32px;
+}
+
+.cartitem label {
+    color: black;
+    margin-top: 0px;
+    font-size: 24px;
+}
+
+.midrows {
+    display: grid;
+    grid-template-rows: 40px 40px;
+    grid-template-columns: 250px 175px;
+    grid-gap: 5px;
+}
+
+.cartright {
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: 75px 75px;
+    grid-gap: 40px;
+}
+
+.cartright button {
+    background-color: #A14603;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    margin-top: 0px;
+    color: white;
     font-size: 30px;
 }
 
 /* ID-level rules for all pages */
 
 #banner {
-    background-image: url("ref_images/bunbackground2.jpg");
+    background-image: url("bunbackground2.jpg");
     background-size: cover;
     white-space: nowrap;
     height: 165px;
@@ -190,7 +243,7 @@ a {
 /* ID-level rules for homepage */
 
 #productlink {
-    background-image: url("ref_images/bakery_img.jpg");
+    background-image: url("bakery_img.jpg");
     background-position: center;
     margin-left: 50px;
     padding-left: 50px;
@@ -214,8 +267,6 @@ a {
     object-fit: cover;
     width: 250px;
     height: 250px;
-    /*width: 100%;
-    max-height: 100%;*/
 }
 
 #visitdeliveryaddress {
@@ -272,6 +323,43 @@ a {
     grid-template-columns: 250px 250px;
     grid-gap: 75px;
     margin-left: 25px;
+}
+
+/* ID-level rules for view cart page */
+
+#viewcart {
+    margin-left: 50px;
+}
+
+#allcart {
+    padding-top: 25px;
+    padding-right: 100px;
+    display: grid;
+    grid-template-rows: 300px;
+    grid-gap: 20px;
+}
+
+#checkoutbuttons p {
+    color: black;
+    font-size: 40px;
+    margin-left: 400px;
+}
+
+#buttonbar {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-gap: 100px;
+    justify-items: center;
+}
+
+#buttonbar button {
+    background-color: #A14603;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-left: 0px;
 }
 
 /* Footer style information */

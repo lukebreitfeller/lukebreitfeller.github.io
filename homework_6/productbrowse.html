@@ -7,19 +7,28 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rouge%20Script:400/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400/">
+    <script src="bakeryscripts.js"></script>
   </head>
   <body>
 
     <header>
-      <div id="banner">
-	<h1>Bun-Bun Bakery Shop</h1>
-      </div>
+      <a href="homepage.html">
+        <div id="banner">
+  	  <h1>Bun-Bun Bakery Shop</h1>
+	</div>
+      </a>
       <div id="navbar">
 	<div class="emphatic">
-	  <h3>EXPLORE SITE</h3>
+	  <div id="exploresite">
+	    <h3>EXPLORE SITE</h3>
+	  </div>
 	</div>
 	<div class="emphatic">
-	  <h3>VIEW CART</h3>
+	  <a href="viewcart.html">
+	    <div id="viewcart">
+	      <h3>VIEW CART</h3>
+	    </div>
+	  </a>
 	</div>
       </div>
     </header>
@@ -34,26 +43,27 @@
       </div>
       <div id="allproducts">
 	<div class="productdisplay">
-	  <div class="smalltext">
-	    <p>In cart:</p>
-	  </div>
-	  <a href="productdetails.html">
-	    <img src="ref_images/cinnamon3.jpg" alt="Picture of an original-flavor cinnamon roll on a plate."/>
+	  <div class="smalltext"></div>
+	  <a href="productdetails.html" onclick="toDetailsFromImage(this)">
+	    <img src="cinnamon3.jpg" alt="Picture of an original-flavor cinnamon roll on a plate."/>
 	  </a>
 	  <div class="displaytext">
-	    <a href="productdetails.html">
-	      <p>Original Cinnamon Rolls $X.XX/roll</p>
+	    <a href="productdetails.html" onclick="toDetailsFromText(this)">
+	      <p class="productname">Original Cinnamon Rolls</p>
+	      <p class="productprice">$X.XX/roll</p>
 	    </a>
 	    <div class="displayselect">
 	      <label for="glaze1">Glaze</label>
 	      <select name="glaze1" id="glaze1">
+		<option value="errg">-</option>
 		<option value="noglaze">None</option>
 		<option value="sugar">Sugar-milk</option>
 		<option value="vanilla">Vanilla-milk</option>
 		<option value="doublechoc">Double-chocolate</option>
 	      </select>
-	      <label for="num1">Num</label>
+	      <label for="num1">Amount</label>
 	      <select name="num1" id="num1">
+		<option value="errn">-</option>
 		<option value="1roll">1</option>
 		<option value="3roll">3</option>
 		<option value="6roll">6</option>
@@ -61,28 +71,31 @@
 	      </select>
 	    </div>
 	  </div>
-	  <div class="displayaddtocart">
-	    <p>Add to Cart</p>
-	  </div>
+	  <button class="displayaddtocart" id="datc1" onclick="addToCartDisp(this)">Add to Cart</button>
 	</div>
 
 	<div class="productdisplay">
-	  <div class="smalltext">
-	    <p>In cart:</p>
-	  </div>
-	  <img src="ref_images/cinnamon2.jpg" alt="Picture of a blackberry-filled cinnamon roll on a plate."/>
+	  <div class="smalltext"></div>
+	  <a href="productdetails.html" onclick="toDetailsFromImage(this)">
+	    <img src="cinnamon2.jpg" alt="Picture of a blackberry-filled cinnamon roll on a plate."/>
+	  </a>
 	  <div class="displaytext">
-	    <p>Blackberry Rolls $X.XX/roll</p>
+	    <a href="productdetails.html" onclick="toDetailsFromText(this)">
+	      <p class="productname">Blackberry Rolls</p>
+	      <p class="productprice">$X.XX/roll</p>
+	    </a>
 	    <div class="displayselect">
 	      <label for="glaze2">Glaze</label>
 	      <select name="glaze2" id="glaze2">
+		<option value="errg">-</option>
 		<option value="noglaze">None</option>
 		<option value="sugar">Sugar-milk</option>
 		<option value="vanilla">Vanilla-milk</option>
 		<option value="doublechoc">Double-chocolate</option>
 	      </select>
-	      <label for="num2">Num</label>
+	      <label for="num2">Amount</label>
 	      <select name="num2" id="num2">
+		<option value="errn">-</option>
 		<option value="1roll">1</option>
 		<option value="3roll">3</option>
 		<option value="6roll">6</option>
@@ -90,28 +103,31 @@
 	      </select>
 	    </div>
 	  </div>
-	  <div class="displayaddtocart">
-	    <p>Add to Cart</p>
-	  </div>
+	  <button class="displayaddtocart" id="datc2" onclick="addToCartDisp(this)">Add to Cart</button>
 	</div>
 
 	<div class="productdisplay">
-	  <div class="smalltext">
-	    <p>In cart:</p>
-	  </div>
-	  <img src="ref_images/cinnamon1.jpg" alt="Picture of an caramel-covered pecan cinnamon roll on a plate."/>
+	  <div class="smalltext"></div>
+	  <a href="productdetails.html" onclick="toDetailsFromImage(this)">
+	    <img src="cinnamon1.jpg" alt="Picture of an caramel-covered pecan cinnamon roll on a plate."/>
+	  </a>
 	  <div class="displaytext">
-	    <p>Caramel Pecan Rolls $X.XX/roll</p>
+	    <a href="productdetails.html" onclick="toDetailsFromText(this)">
+	      <p class="productname">Caramel Pecan Rolls</p>
+	      <p class="productprice">$X.XX/roll</p>
+	    </a>
 	    <div class="displayselect">
 	      <label for="glaze3">Glaze</label>
 	      <select name="glaze3" id="glaze3">
+		<option value="errg">-</option>
 		<option value="noglaze">None</option>
 		<option value="sugar">Sugar-milk</option>
 		<option value="vanilla">Vanilla-milk</option>
 		<option value="doublechoc">Double-chocolate</option>
 	      </select>
-	      <label for="num3">Num</label>
+	      <label for="num3">Amount</label>
 	      <select name="num3" id="num3">
+		<option value="errn">-</option>
 		<option value="1roll">1</option>
 		<option value="3roll">3</option>
 		<option value="6roll">6</option>
@@ -119,28 +135,31 @@
 	      </select>
 	    </div>
 	  </div>
-	  <div class="displayaddtocart">
-	    <p>Add to Cart</p>
-	  </div>
+	  <button class="displayaddtocart" id="datc3" onclick="addToCartDisp(this)">Add to Cart</button>
 	</div>
 
 	<div class="productdisplay">
-	  <div class="smalltext">
-	    <p>In cart:</p>
-	  </div>
-	  <img src="ref_images/cinnamon4.jpg" alt="Picture of a walnut-filled cinnamon roll on a plate."/>
+	  <div class="smalltext"></div>
+	  <a href="productdetails.html" onclick="toDetailsFromImage(this)">
+	    <img src="cinnamon4.jpg" alt="Picture of a walnut-filled cinnamon roll on a plate."/>
+	  </a>
 	  <div class="displaytext">
-	    <p>Walnut Rolls $X.XX/roll</p>
+	    <a href="productdetails.html" onclick="toDetailsFromText(this)">
+	      <p class="productname">Walnut Rolls</p>
+	      <p class="productprice">$X.XX/roll</p>
+	    </a>
 	    <div class="displayselect">
 	      <label for="glaze4">Glaze</label>
 	      <select name="glaze4" id="glaze4">
+		<option value="errg">-</option>
 		<option value="noglaze">None</option>
 		<option value="sugar">Sugar-milk</option>
 		<option value="vanilla">Vanilla-milk</option>
 		<option value="doublechoc">Double-chocolate</option>
 	      </select>
-	      <label for="num4">Num</label>
+	      <label for="num4">Amount</label>
 	      <select name="num4" id="num4">
+		<option value="errn">-</option>
 		<option value="1roll">1</option>
 		<option value="3roll">3</option>
 		<option value="6roll">6</option>
@@ -148,28 +167,31 @@
 	      </select>
 	    </div>
 	  </div>
-	  <div class="displayaddtocart">
-	    <p>Add to Cart</p>
-	  </div>
+	  <button class="displayaddtocart" id="datc4" onclick="addToCartDisp(this)">Add to Cart</button>
 	</div>
 
 	<div class="productdisplay">
-	  <div class="smalltext">
-	    <p>In cart:</p>
-	  </div>
-	  <img src="ref_images/cinnamon5.jpg" alt="Picture of a pumpkin spice cinnamon roll on a plate."/>
+	  <div class="smalltext"></div>
+	  <a href="productdetails.html" onclick="toDetailsFromImage(this)">
+	    <img src="cinnamon5.jpg" alt="Picture of a pumpkin spice cinnamon roll on a plate."/>
+	  </a>
 	  <div class="displaytext">
-	    <p>Pumpkin Spice Rolls $X.XX/roll</p>
+	    <a href="productdetails.html" onclick="toDetailsFromText(this)">
+	      <p class="productname">Pumpkin Spice Rolls</p>
+	      <p class="productprice">$X.XX/roll</p>
+	    </a>
 	    <div class="displayselect">
 	      <label for="glaze5">Glaze</label>
 	      <select name="glaze5" id="glaze5">
+		<option value="errg">-</option>
 		<option value="noglaze">None</option>
 		<option value="sugar">Sugar-milk</option>
 		<option value="vanilla">Vanilla-milk</option>
 		<option value="doublechoc">Double-chocolate</option>
 	      </select>
-	      <label for="num5">Num</label>
+	      <label for="num5">Amount</label>
 	      <select name="num5" id="num5">
+		<option value="errn">-</option>
 		<option value="1roll">1</option>
 		<option value="3roll">3</option>
 		<option value="6roll">6</option>
@@ -177,28 +199,31 @@
 	      </select>
 	    </div>
 	  </div>
-	  <div class="displayaddtocart">
-	    <p>Add to Cart</p>
-	  </div>
+	  <button class="displayaddtocart" id="datc5" onclick="addToCartDisp(this)">Add to Cart</button>
 	</div>
 
 	<div class="productdisplay">
-	  <div class="smalltext">
-	    <p>In cart:</p>
-	  </div>
-	  <img src="ref_images/cinnamon6.jpg" alt="Picture of a gluten-free original flavor cinnamon roll on a plate."/>
+	  <div class="smalltext"></div>
+	  <a href="productdetails.html" onclick="toDetailsFromImage(this)">
+	    <img src="cinnamon6.jpg" alt="Picture of a gluten-free original flavor cinnamon roll on a plate."/>
+	  </a>
 	  <div class="displaytext">
-	    <p>Original (Gluten-Free) Rolls $X.XX/roll</p>
+	    <a href="productdetails.html" onclick="toDetailsFromText(this)">
+	      <p class="productname">Original (Gluten-Free) Rolls</p>
+	      <p class="productprice">$X.XX/roll</p>
+	    </a>
 	    <div class="displayselect">
 	      <label for="glaze6">Glaze</label>
 	      <select name="glaze6" id="glaze6">
+		<option value="errg">-</option>
 		<option value="noglaze">None</option>
 		<option value="sugar">Sugar-milk</option>
 		<option value="vanilla">Vanilla-milk</option>
 		<option value="doublechoc">Double-chocolate</option>
 	      </select>
-	      <label for="num6">Num</label>
+	      <label for="num6">Amount</label>
 	      <select name="num6" id="num6">
+		<option value="errn">-</option>
 		<option value="1roll">1</option>
 		<option value="3roll">3</option>
 		<option value="6roll">6</option>
@@ -206,9 +231,7 @@
 	      </select>
 	    </div>
 	  </div>
-	  <div class="displayaddtocart">
-	    <p>Add to Cart</p>
-	  </div>
+	  <button class="displayaddtocart" id="datc6" onclick="addToCartDisp(this)">Add to Cart</button>
 	</div>
 	
       </div>
@@ -221,6 +244,11 @@
       <p>###-###-#### 9:00-5:00 MTWTF</p>
       <p>xxxxxx@xxxxxxxxxxxx.com</p>
     </footer>
+
+    <script>
+      loadPage();
+      loadProducts();
+    </script>
 
   </body>
   

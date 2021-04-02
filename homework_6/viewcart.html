@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Bun-Bun Bakery Shop</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rouge%20Script:400/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400/">
+    <script src="bakeryscripts.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <a href="homepage.html">
+        <div id="banner">
+  	  <h1>Bun-Bun Bakery Shop</h1>
+	</div>
+      </a>
+      <div id="navbar">
+	<div class="emphatic">
+	  <div id="exploresite">
+	    <h3>EXPLORE SITE</h3>
+	  </div>
+	</div>
+      </div>
+    </header>
+
+    <div id="viewcart">
+      <div class="emphatic">
+	<h3>YOUR CART (9 ITEMS)</h3>
+      </div>
+
+      <!-- It makes more sense have the static html be for the cart with a few items in it just to show what it looks like. The functional version will be empty by default -->
+      <div id="allcart">
+	<div class="cartitem">
+	  <div class="cartleft">
+	    <img src="cinnamon3.jpg" alt="Picture of an original-flavor cinnamon roll on a plate."/>
+	  </div>
+	  <!-- This part will be dynamic based on the glaze type and amount -->
+	  <div class="cartmid">
+	    <p>Original Cinnamon Rolls</p>
+	    <div class="midrows">
+	      <label for="glaze1">Glaze: None</label>
+	      <select name="glaze1" id="glaze1">
+		<option value="errg">-</option>
+		<option value="noglaze">None</option>
+		<option value="sugar">Sugar-milk</option>
+		<option value="vanilla">Vanilla-milk</option>
+		<option value="doublechoc">Double-chocolate</option>
+	      </select>
+	      <label for="num1">Amount: 3 rolls</label>
+	      <select name="num1" id="num1">
+		<option value="errn">-</option>
+		<option value="1roll">1</option>
+		<option value="3roll">3</option>
+		<option value="6roll">6</option>
+		<option value="12roll">12</option>
+	      </select>
+	    </div>
+	    <p>Total: $X.XX</p>
+	  </div>
+	  <div class="cartright">
+	    <button class="changeorder">Change Order</button>
+	    <button class="removefromcart">Remove From Cart</button>
+	  </div>
+	</div>
+	<div class="cartitem">
+	  <div class="cartleft">
+	    <img src="cinnamon2.jpg" alt="Picture of an blackberry cinnamon roll on a plate."/>
+	  </div>
+	  <!-- This part will be dynamic based on the glaze type and amount -->
+	  <div class="cartmid">
+	    <p>Blackberry Rolls</p>
+	    <div class="midrows">
+	      <label for="glaze2">Glaze: Vanilla milk</label>
+	      <select name="glaze2" id="glaze2">
+		<option value="errg">-</option>
+		<option value="noglaze">None</option>
+		<option value="sugar">Sugar-milk</option>
+		<option value="vanilla">Vanilla-milk</option>
+		<option value="doublechoc">Double-chocolate</option>
+	      </select>
+	      <label for="num2">Amount: 6 rolls</label>
+	      <select name="num2" id="num2">
+		<option value="errn">-</option>
+		<option value="1roll">1</option>
+		<option value="3roll">3</option>
+		<option value="6roll">6</option>
+		<option value="12roll">12</option>
+	      </select>
+	    </div>
+	    <p>Total: $XX.XX</p>
+	  </div>
+	  <div class="cartright">
+	    <button class="changeorder">Change Order</button>
+	    <button class="removefromcart">Remove From Cart</button>
+	  </div>
+	</div>
+      </div>
+
+      <div id="checkoutbuttons">
+	<p>TOTAL: $X.XX</p>
+	<div id="buttonbar">
+	  <button id="backtobrowse">BACK TO BROWSE</button>
+	  <button id="proceedtocheckout">PROCEED TO CHECKOUT</button>
+	</div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foottop">
+	<p>Contact Us</p>
+      </div>
+      <p>###-###-#### 9:00-5:00 MTWTF</p>
+      <p>xxxxxx@xxxxxxxxxxxx.com</p>
+    </footer>
+
+  </body>
+
+</html>
