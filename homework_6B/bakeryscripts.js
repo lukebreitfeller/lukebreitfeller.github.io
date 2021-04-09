@@ -521,9 +521,9 @@ function showCart() {
 
 var cart;
 
-var originalInfo = new ProductInfo("Original Cinnamon Rolls","cinnamon1.jpg","Picture of an original-flavor cinnamon roll on a plate.","$X.XX");
-var blackberryInfo = new ProductInfo("Blackberry Rolls","cinnamon2.jpg","Picture of a blackberry-filled cinnamon roll on a plate.","$X.XX");
-var caramelInfo = new ProductInfo("Caramel Pecan Rolls","cinnamon3.jpg","Picture of a caramel-covered pecan cinnamon roll on a plate.","$X.XX");
-var walnutInfo = new ProductInfo("Walnut Rolls","cinnamon4.jpg","Picture of a walnut-filled cinnamon roll on a plate.","$X.XX");
-var pumpkinInfo = new ProductInfo("Pumpkin Spice Rolls","cinnamon5.jpg","Picture of a pumpkin spice cinnamon roll on a plate.","$X.XX");
-var glutenFreeInfo = new ProductInfo("Original (Gluten-Free) Rolls","cinnamon6.jpg","Picture of a gluten-free original flavor cinnamon roll on a plate.","$X.XX");
+var originalInfo = new ProductInfo("Original Cinnamon Rolls","ref_images/cinnamon1.jpg","Picture of an original-flavor cinnamon roll on a plate.","$X.XX");
+var blackberryInfo = new ProductInfo("Blackberry Rolls","ref_images/cinnamon2.jpg","Picture of a blackberry-filled cinnamon roll on a plate.","$X.XX");
+var caramelInfo = new ProductInfo("Caramel Pecan Rolls","ref_images/cinnamon3.jpg","Picture of a caramel-covered pecan cinnamon roll on a plate.","$X.XX");
+var walnutInfo = new ProductInfo("Walnut Rolls","ref_images/cinnamon4.jpg","Picture of a walnut-filled cinnamon roll on a plate.","$X.XX");
+var pumpkinInfo = new ProductInfo("Pumpkin Spice Rolls","ref_images/cinnamon5.jpg","Picture of a pumpkin spice cinnamon roll on a plate.","$X.XX");
+var glutenFreeInfo = new ProductInfo("Original (Gluten-Free) Rolls","ref_images/cinnamon6.jpg","Picture of a gluten-free original flavor cinnamon roll on a plate.","$X.XX");

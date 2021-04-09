@@ -225,7 +225,7 @@ button {
 /* ID-level rules for all pages */
 
 #banner {
-    background-image: url("bunbackground2.jpg");
+    background-image: url("ref_images/bunbackground2.jpg");
     background-size: cover;
     white-space: nowrap;
     height: 165px;
@@ -244,7 +244,7 @@ button {
 /* ID-level rules for homepage */
 
 #productlink {
-    background-image: url("bakery_img.jpg");
+    background-image: url("ref_images/bakery_img.jpg");
     background-position: center;
     margin-left: 50px;
     padding-left: 50px;
