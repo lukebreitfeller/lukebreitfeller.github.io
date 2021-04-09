@@ -475,6 +475,7 @@ function showCart() {
     var emptyCart = document.getElementById("emptycart");
     emptyCart.remove();
 
+    // Count is just to make sure our dropdown menus have unique ids
     var count = 1;
 
     if (cart.orig !== null) {
