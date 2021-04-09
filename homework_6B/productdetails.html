@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Bun-Bun Bakery Shop</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rouge%20Script:400/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400/">
+    <script src="bakeryscripts.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <a href="index.html">
+	<div id="banner">
+	  <h1>Bun-Bun Bakery Shop</h1>
+	</div>
+      </a>
+      <div id="navbar">
+	<div class="emphatic">
+	  <div id="exploresite">
+	    <h3>EXPLORE SITE</h3>
+	  </div>
+	</div>
+	<div class="emphatic">
+	  <a href="viewcart.html">
+	    <div id="viewcart">
+	      <h3>VIEW CART</h3>
+	    </div>
+	  </a>
+	</div>
+      </div>
+    </header>
+
+    <div id="productdetails">
+      <div id="detailleft">
+	<div class="detailcontainer">
+	  <img src="ref_images/cinnamon3.jpg" alt="Picture of an original-flavor cinnamon roll on a plate."/>
+	  <div class="priceval" id="detailprice">$X.XX</div>
+	</div>
+	<p>Allergens/diet info: Lorum ipsum xxxx xxx x xx xxxxx xxxxx x xxxx x xx xxxx  xxxx xx  xxxx xx x xxx xxxxxxxxx xxxxx xxxxx xxxxx x xxxx xxxx xxxx.</p>
+      </div>
+      <div id="detailright">
+	<div id="detailproductname">
+	  <h2>Original Flavor Cinnamon Roll</h2>
+	</div>
+	<div id="detailrighttop">
+	  <label for="glaze1">Glaze</label>
+	  <select name="glaze1" id="glaze1">
+	    <option value="errg">-</option>
+	    <option value="noglaze">None</option>
+	    <option value="sugar">Sugar-milk</option>
+	    <option value="vanilla">Vanilla-milk</option>
+	    <option value="doublechoc">Double-chocolate</option>
+	  </select>
+	  <label for="num1">Num</label>
+	  <select name="num1" id="num1">
+	    <option value="errn">-</option>
+	    <option value="1roll">1</option>
+	    <option value="3roll">3</option>
+	    <option value="6roll">6</option>
+	    <option value="12roll">12</option>
+	  </select>
+	</div>
+	<div class="totalprice">
+	  <h3>Total Price:</h3>
+	</div>
+	<div id="detailrightbottom">
+	  <button class="detailbutton" id="detailaddtocart" onclick="addToCartDet()">CHANGE ORDER</button>
+	  <button class="detailbutton" id="detailgotocart">GO TO CART</button>
+	</div>
+      </div>	
+    </div>
+    
+    <footer>
+      <div class="foottop">
+	<p>Contact Us</p>
+      </div>
+      <p>###-###-#### 9:00-5:00 MTWTF</p>
+      <p>xxxxxx@xxxxxxxxxxxx.com</p>
+    </footer>
+
+    <script>
+      loadPage();
+      setProduct();
+    </script>
+
+  </body>
+  
+</html>

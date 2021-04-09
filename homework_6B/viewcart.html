@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Bun-Bun Bakery Shop</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rouge%20Script:400/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400/">
+    <script src="bakeryscripts.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <a href="homepage.html">
+        <div id="banner">
+  	  <h1>Bun-Bun Bakery Shop</h1>
+	</div>
+      </a>
+      <div id="navbar">
+	<div class="emphatic">
+	  <div id="exploresite">
+	    <h3>EXPLORE SITE</h3>
+	  </div>
+	</div>
+      </div>
+    </header>
+
+    <div id="viewcartpage">
+      <div class="emphatic" id="viewcart">
+	<h3>YOUR CART</h3>
+      </div>
+
+      <!-- It makes more sense have the static html be for the cart with a few items in it just to show what it looks like. The functional version will be empty by default -->
+      <div id="allcart">
+	<div id="emptycart">
+	  <h3>YOUR CART IS EMPTY</h3>
+	</div>
+      </div>
+
+      <div id="checkoutbuttons">
+	<div id="totalprice">
+	  <!--Blank while the cart is empty-->
+	  <!--<p>TOTAL: $X.XX</p>-->
+	</div>
+	<div id="buttonbar">
+	  <a href="productbrowse.html">
+	    <button id="backtobrowse">BACK TO BROWSE</button>
+	  </a>
+	  <!--<button id="proceedtocheckout">PROCEED TO CHECKOUT</button>-->
+	</div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foottop">
+	<p>Contact Us</p>
+      </div>
+      <p>###-###-#### 9:00-5:00 MTWTF</p>
+      <p>xxxxxx@xxxxxxxxxxxx.com</p>
+    </footer>
+
+    <script>
+      loadPage(true);
+      showCart();
+    </script>
+
+  </body>
+
+</html>
