@@ -16,7 +16,8 @@ h1 {
 
 h3 {
     text-align: center;
-    color: lightgray;
+    color: white;
+    text-shadow: 2px 2px black;
     margin-top: 10px;
 }
 
@@ -38,6 +39,8 @@ span.unsorted {
     background-color: aquamarine;
     height: 50px;
     width: 100px;
+    /* This is an awkward way to write this, but this change happened near submission and I didn't want to re-assign every node class value */
+    border-radius: 10px;
 }
 
 .node p {
@@ -115,6 +118,7 @@ span.unsorted {
 
 .unsort.node {
     box-shadow: 3px 3px;
+    border-radius: 0px;
 }
 
 .bad.node {
@@ -153,6 +157,7 @@ span.unsorted {
 #arrowrow {
     display: grid;
     grid-template-columns: 600px 600px;
+    border: 2px dashed black;
 }
 
 #timelinelist {
