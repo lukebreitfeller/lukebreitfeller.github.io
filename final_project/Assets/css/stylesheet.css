@@ -7,7 +7,7 @@
 body {
     background-color: cornflowerblue;
     color: black;
-    font-family: Roboto;
+    font-family: "Lucida Console", monospace, serif;
 }
     
 h1 {
@@ -18,40 +18,65 @@ h1 {
 
 h3 {
     text-align: center;
+    color: lightgray;
+    margin-top: 10px;
 }
 
-span {
+span.sorted {
     background-color: lawngreen;
 }
 
+span.unsorted {
+    background-color: goldenrod;
+}
+
 .bucket {
-    background-color: blue;
+    background-color: darkblue;
     height: 300px;
     width: 300px;
 }
 
+.large.bucket {
+    width: 700px;
+}
+
 .nodeblock {
+    display: grid;
+    grid-template-rows: 75px 75px 75px;
     background-color: white;
-    height: 190px;
+    height: 210px;
     width: 200px;
+    padding-top: 5px;
     margin: auto;
-    padding-top: 25px;
+    justify-content: center;
+}
+
+.large.nodeblock {
+    width: 600px;
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    grid-template-rows: 60px 60px 60px;
+    padding-left: 25px;
 }
 
 .node {
     background-color: aquamarine;
-    margin: auto;
-}
-
-.reduced {
+/*    margin: auto;*/
     height: 50px;
     width: 100px;
 }
 
+/*.reduced {
+    height: 50px;
+    width: 100px;
+}*/
+
 .expanded {
-    height: 150px;
+/*    height: 150px;
     width: 150px;
-    padding-top: 10px;
+    padding-top: 10px;*/
+    border: solid darkblue;
+    border-width: 2px;
 }
 
 .eventblock {
@@ -63,6 +88,15 @@ span {
 
 .node p {
     text-align: center;
+    font-size: 14px;
+}
+
+.unsort.node {
+    box-shadow: 3px 3px;
+}
+
+.boxexpand {
+    font-family: "Times New Roman";
 }
 
 .timelinearrow {
@@ -73,29 +107,44 @@ span {
     margin: auto;
 }
 
-.bad {
-    background-image: url("rightsidediags.png");
+/*.timelinearrow.vert {
+    width: 50px;
+    height: 600px;
+    border-width: 0 5px 0 0;
+}*/
+
+.bad.timelinearrow {
+    background-image: url("../images/badtimeline.png");
+    background-size: 100% 100%;
+}
+
+.bad.node {
+    background-image: url("../images/badbucket.png");
+    background-size: 100% 100%;
 }
 
 #timeline {
     display: grid;
-    grid-template-rows: 100px 150px; 
+    grid-template-rows: 100px 100px;
+    width: 1200px;
+    margin: auto;
+    margin-bottom: 50px;
 }
 
 #arrowrow {
     display: grid;
     grid-template-columns: 600px 600px;
-    margin: auto;
 }
 
 #timelinelist {
     display: grid;
 }
 
+/*
 #toolsandsuch {
     display: grid;
     grid-template-columns: 100px 600px;
-}
+}*/
 
 #toolbar {
     background-color: darkgray;
@@ -103,20 +152,27 @@ span {
     width: 75px;
 }
 
-#bucketarea {
+/*#bucketarea {
     display: grid;
     grid-template-rows: 150px 300px;
-}
+}*/
 
 #bucketrow {
     display: grid;
+    width: 1200px;
+    margin: auto;
     grid-template-columns: 400px 400px 400px;
+}
+
+#largebuckettop {
+    display: grid;
+    grid-template-columns: 650px 50px;
 }
 
 #textbox {
     background-color: white;
     height: 300px;
-    width: 350px;
+    width: 400px;
 }
 
 #textbox p {
@@ -133,4 +189,8 @@ span {
 #errboxbuttons {
     display: grid;
     grid-template-columns: 75px 75px;
+}
+
+#instructions {
+    background-color: white;
 }

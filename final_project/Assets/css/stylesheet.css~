@@ -114,12 +114,12 @@ span.unsorted {
 }*/
 
 .bad.timelinearrow {
-    background-image: url("badtimeline.png");
+    background-image: url("Assets/images/badtimeline.png");
     background-size: 100% 100%;
 }
 
 .bad.node {
-    background-image: url("badbucket.png");
+    background-image: url("Assets/images/badbucket.png");
     background-size: 100% 100%;
 }
 
