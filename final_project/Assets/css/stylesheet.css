@@ -214,7 +214,8 @@ span.unsorted {
 
 /* For mobile users */
 #mobilewarning {
-    font-size: 56px;
+    font-size: 64px;
+    color: red;
 }
 
 /* Rules for instruction page--there's only one we need specifically for the instructions page, just to make the text a little more readable. */
