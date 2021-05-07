@@ -229,9 +229,14 @@ function refreshTimeline() {
 	badTimelineList[i].className = "timelinearrow";
     }
 
-    var badBucket = document.getElementsByClassName("reduced node bad");
+    var statList3 = [];
+    var badBucket = document.getElementsByClassName("reduced unsort node bad");
     for (var i = 0; i < badBucket.length; i++) {
-	badBucket[i].className = "reduced node";
+	statList3.push(badBucket[i]);
+    }
+
+    for (var i = 0; i < statList3.length; i++) {
+	statList3[i].className = "reduced unsort node";
     }
 
     // We call "resizePage" every time the timeline is updated because all of the above code assumes a horizontal orientation, which may not be true.
@@ -494,6 +499,7 @@ function buildError() {
     errBoxNo.innerHTML = "No";
     // If user does not override error, nothing changes but error box should be removed.
     errBoxNo.onclick = function () {
+	reduceAllNodes();
 	removeError();
     }
     errBoxButtons.appendChild(errBoxNo);
