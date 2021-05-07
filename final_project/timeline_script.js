@@ -321,10 +321,10 @@ function dropObject(evTargetText,evText) {
 
     var unsortIdx;
     if (unsortNode.bucket === "past") {
-	unsortIdx = pastBucket.indexOf(unsortNode);
+	unsortIdx = getBucketIndex(unsortNodeId,pastBucket);
 	pastBucket.splice(unsortIdx,1);
     } else if (unsortNode.bucket === "future") {
-	unsortIdx = futureBucket.indexOf(unsortNode);
+	unsortIdx = getBucketIndex(unsortNodeId,futureBucket);
 	futureBucket.splice(unsortIdx,1);
     }
 
@@ -340,6 +340,16 @@ function dropObject(evTargetText,evText) {
     loadBuckets();
     refreshTimeline();
 
+}
+
+function getBucketIndex(nodeID,bucket) {    
+    for (var i = 0; i < bucket.length; i++) {
+	if (bucket[i].idx === nodeID) {
+	    return i;
+	}
+    }
+
+    return null;
 }
 
 function dropStoredObject() {
@@ -381,7 +391,7 @@ function badTimeline(selectedNode) {
     var presentIdx = null;
     
     for (var i = 0; i < timeline.length; i++) {
-	if (timeline[i].eventList.includes("Present/Now")) {
+	if (timeline[i].eventList.includes("Present")) {
 	    presentIdx = i;
 	}
     }
