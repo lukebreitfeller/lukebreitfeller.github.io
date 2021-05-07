@@ -766,7 +766,7 @@ function initializePage() {
     if (mobileBrowser) {
 	var mobileWarning = document.createElement("div");
 	mobileWarning.id = "mobilewarning";
-	mobileWarning.innerHTML = "<p>THIS TOOL IS ONLY USABLE THROUGH A DESKTOP BROWSER. PLEASE SWITCH TO DESKTOP.</p>";
+	mobileWarning.innerHTML = "<h3>THIS TOOL IS ONLY USABLE THROUGH A DESKTOP BROWSER. PLEASE SWITCH TO DESKTOP.</h3>";
 	document.body.innerHTML = "";
 	document.body.appendChild(mobileWarning);
 	return null;
