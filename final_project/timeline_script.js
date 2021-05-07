@@ -606,6 +606,7 @@ function loadBuckets() {
     if (document.getElementById("pbexpand") === null) {
 	var openPB = document.createElement("div");
 	openPB.id = "pbexpand";
+	openPB.className = "boxexpand";
 	openPB.innerHTML = "<h3>. . .</h3>";
 	openPB.onclick = function () {
 	    expandBucket("pastbucket");
@@ -640,6 +641,7 @@ function loadBuckets() {
     if (document.getElementById("fbexpand") === null) {
 	var openFB = document.createElement("div");
 	openFB.id = "fbexpand";
+	openFB.className = "boxexpand";
 	openFB.innerHTML = "<h3>. . .</h3>";
 	openFB.onclick = function () {
 	    expandBucket("futurebucket");
