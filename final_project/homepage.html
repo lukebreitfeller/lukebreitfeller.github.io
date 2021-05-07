@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Build Timeline</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="timeline_script.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <div id="banner">
+	<a href="instructions.html" onclick="toInstructions()">
+          <h1>View instructions ></h1>
+	</a>
+      </div>
+    </header>
+
+    <div id="timeline">
+      <div id="arrowrow">
+	<div class="timelinearrow" id="timeline0" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="allowDrop(event)"></div>
+	<div class="timelinearrow" id="timeline1" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="allowDrop(event)"></div>
+      </div>
+      <div id="timelinelist">
+	<div id="frontpadding"></div>
+      </div>
+    </div>
+
+    <div id="toolsandsuch">
+<!--      <div id="toolbar">
+	<div id="arrowtool">
+	  <p>Arrow</p>
+	</div>
+	<div id="equalstool">
+	  <p>Equals</p>
+	</div>
+	<div id="scissorstool">
+	  <p>Scissors</p>
+	</div>
+	<div id="floppytool">
+	  <p>Floppy</p>
+	</div>
+      </div> -->
+
+      <div id="bucketrow">
+<!--	<div id="emptyspace"></div>
+
+	<div id="bucketrow">-->
+	<div class="bucket" id="pastbucket">
+	  <h3>Events In The Past</h3>
+	  <div class="nodeblock">
+	  </div>
+	</div>
+
+	<div class="bucket" id="futurebucket">
+	  <h3>Events In The Future</h3>
+	  <div class="nodeblock">
+	  </div>
+	</div>
+
+	<div id="textbox">
+	  <p>This tool was <span class="past unsorted">built</span> for use in human annotations for machine learning. Its aim is to take a text <span class="past unsorted">populated</span> with event mentions (words or phrases used to signify events within the narrative) and give trained human users the ability to <span class="future unsorted">organize</span> these events along a visual timeline. This process allows users to <span class="future unsorted">answer</span> questions about the chronological order of any events in the text more clearly and efficiently. The end goal is to <span class="future unsorted">extract</span> these timeline annotations for use in <span class="future unsorted">training</span> machine learning models</p>
+	</div>
+      </div>
+      
+    </div>
+      
+    <script>
+      initializePage();
+    </script>
+
+  </body>
+  
+</html>

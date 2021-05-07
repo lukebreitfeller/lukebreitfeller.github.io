@@ -1,0 +1,397 @@
+// Object constructor for nodes.
+
+class UnsortedNode {
+    constructor(event,idx,bucket) {
+	this.eventList = [event];
+	this.idx = idx;
+	this.bucket = bucket;
+	this.befores = null;
+	this.afters = null;
+    }
+}
+
+class SortedNode {
+    constructor(event,idx) {
+	this.eventList = [event];
+	this.idx = idx;
+    }
+}
+
+var globalNodes = [];
+
+var timeline;
+
+var pastBucket;
+var futureBucket;
+
+function nodeToTimeline(node) {
+    if (node === "ERROR") {
+	buildError();
+	return null;
+    }
+    
+    var tlList = document.getElementById("timelinelist");
+
+    var newElement = document.createElement("div");
+    newElement.className = "reduced node";
+    newElement.id = "sortnode" + String(node.idx);
+    newElement.draggable = "true";
+    newElement.onclick = function () {
+	expandNode(newElement);
+    };
+    newElement.innerHTML = "<p>" + node.eventList[0] + "</p>";
+
+    tlList.appendChild(newElement);
+
+}
+
+function refreshTimeline() {
+    var tlArrowRow = document.getElementById("arrowrow");
+    var tlArrows = tlArrowRow.getElementsByClassName("timelinearrow");
+
+    var testElement = document.getElementById("arrowtool");
+    
+    // Have to make a second list in order to go through this iteratively
+
+    var statList = []
+    for (var i = 0; i < tlArrows.length; i++) {
+	statList.push(tlArrows[i]);
+    }
+
+    for (var i = 0; i < statList.length; i++) {
+	tlArrow = statList[i];
+	tlArrow.remove();
+    }
+
+    var arrowLen = Math.floor(1200/(timeline.length+1));
+
+    var tlListRow = document.getElementById("timelinelist");
+    var tlLists = tlListRow.getElementsByClassName("node");
+    
+    var statList2 = []
+    for (var i = 0; i < tlLists.length; i++) {
+	statList2.push(tlLists[i]);
+    }
+
+    for (var i = 0; i < statList2.length; i++) {
+	tlList = statList2[i];
+	tlList.remove();
+    }
+
+    var tlListError = document.getElementById("errbox");
+    if (tlListError !== null) {
+	tlListError.remove();
+    }
+
+    var count = 0;
+    for (var i = 0; i < timeline.length; i++) {
+	var newTlArrow = document.createElement("div");
+	newTlArrow.className = "timelinearrow";
+	newTlArrow.id = "timeline" + String(count);
+	newTlArrow.style.width = String(arrowLen) + "px";
+	newTlArrow.ondrop = function(event) {
+	    drop(event);
+	}
+	newTlArrow.ondragover = function(event) {
+	    allowDrop(event);
+	}
+	newTlArrow.ondragenter = function(event) {
+	    allowDrop(event);
+	}
+	tlArrowRow.appendChild(newTlArrow);
+
+	nodeToTimeline(timeline[i]);
+	count++;
+    }
+
+    var newTlArrow = document.createElement("div");
+    newTlArrow.className = "timelinearrow";
+    newTlArrow.id = "timeline" + String(count);
+    newTlArrow.style.width = String(arrowLen) + "px";
+    newTlArrow.ondrop = function(event) {
+	drop(event);
+    }
+    newTlArrow.ondragover = function(event) {
+	allowDrop(event);
+    }
+    newTlArrow.ondragenter = function(event) {
+	allowDrop(event);
+    }
+    tlArrowRow.appendChild(newTlArrow);
+
+    var nodeLen = Math.floor(1200/count);
+
+    var arrowStyle = "";
+    for (var i = 0; i < count+1; i++) {
+	newString = " " + String(arrowLen) + "px";
+	arrowStyle = arrowStyle.concat(newString);
+    }
+
+    tlArrowRow.style.gridTemplateColumns = arrowStyle;
+
+    var nodeStyle = "";
+    for (var i = 0; i < count; i++) {
+	newString = " " + String(nodeLen) + "px";
+	nodeStyle = nodeStyle.concat(newString);
+    }
+
+//    testElement.innerHTML = nodeStyle;
+    tlListRow.style.gridTemplateColumns = nodeStyle;
+
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text",ev.target.id);
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drop(ev) {
+    ev.preventDefault();
+
+    var target = ev.target;
+
+    if (target.className.includes("timelinearrow")) {
+
+	if (target.className.includes("bad")) {
+	    var tlSegment = parseInt(target.id.replace("timeline",""));
+	    timeline.splice(tlSegment,0,"ERROR");
+
+	    refreshTimeline();
+		
+	    sessionStorage.setItem("errDropSeg",target.id);
+	    sessionStorage.setItem("errDropNode",ev.dataTransfer.getData("text"));
+
+	} else {
+	    //ev.preventDefault();
+	    dropObject(target.id,ev.dataTransfer.getData("text"));
+	}
+    }
+}
+
+function buildError() {
+    var timelineListRow = document.getElementById("timelinelist");
+    
+    var errBox = document.createElement("div");
+    errBox.id = "errbox";
+    timelineListRow.appendChild(errBox);
+
+    var errBoxText = document.createElement("div");
+    errBoxText.innerHTML = "<p>Previous info says this element should not go here. Place element anyways?</p>";
+    errBox.appendChild(errBoxText);
+
+    var errBoxButtons = document.createElement("div");
+    errBoxButtons.id = "errboxbuttons";
+    errBox.appendChild(errBoxButtons);
+
+    var errBoxYes = document.createElement("button");
+    errBoxYes.innerHTML = "Yes";
+    errBoxYes.onclick = function () {
+	dropStoredObject();
+	removeError();
+    }
+    errBoxButtons.appendChild(errBoxYes);
+
+    var errBoxNo = document.createElement("button");
+    errBoxNo.innerHTML = "No";
+    errBoxNo.onclick = function () {
+	removeError();
+    }
+    errBoxButtons.appendChild(errBoxNo);
+    
+}
+
+function removeError() {
+    sessionStorage.removeItem("errDropSeg");
+    sessionStorage.removeItem("errDropNode");
+
+    var errIdx = timeline.indexOf("ERROR");
+    timeline.splice(errIdx,1);
+
+    refreshTimeline();
+}
+
+function dropObject(evTargetText,evText) {    
+    var tlSegment = parseInt(evTargetText.replace("timeline",""));
+    var unsortNodeId = parseInt(evText.replace("unsortnode",""));
+    var unsortNodeElem = document.getElementById(evText);
+
+    var unsortNode = globalNodes[unsortNodeId];
+
+    var sortNode = new SortedNode(null,unsortNode.idx);
+    sortNode.eventList = unsortNode.eventList;
+
+    unsortNodeElem.remove();
+    timeline.splice(tlSegment,0,sortNode);
+
+    refreshTimeline();
+
+}
+
+function dropStoredObject() {
+    var storedSeg = sessionStorage.getItem("errDropSeg");
+    var storedNode = sessionStorage.getItem("errDropNode");
+
+    dropObject(storedSeg,storedNode);
+}
+
+function expandNode(node) {
+
+    reduceAllNodes();
+    
+    node.className = "expanded node";
+    node.innerHTML = "";
+    node.onclick = function () {
+	reduceNode(node);
+    };
+
+    var insideElement = document.createElement("div");
+    insideElement.className = "eventblock";
+    node.appendChild(insideElement);
+    
+    var nodeID = node.id.replace("sortnode","");
+    nodeID = nodeID.replace("un","");
+    var selectedNode = globalNodes[nodeID];
+
+    for (var i = 0; i < selectedNode.eventList.length; i++) {
+	var newText = document.createElement("div");
+	newText.innerHTML = "<p>" + selectedNode.eventList[i] + "<p>";
+	insideElement.appendChild(newText);
+    }
+
+    badTimeline(selectedNode);
+//    if (selectedNode.bucket === "past") { 
+//	var futureTimeline = document.getElementsByClassName("timelinearrow")[1];
+//	futureTimeline.className = "timelinearrow bad";
+//    } else if (selectedNode.bucket === "future") {
+//	var pastTimeline = document.getElementsByClassName("timelinearrow")[0];
+//	pastTimeline.className = "timelinearrow bad";
+//    }
+
+}
+
+function badTimeline(selectedNode) {
+    var testElement = document.getElementById("arrowtool");
+    
+    var presentIdx = null;
+    
+    for (var i = 0; i < timeline.length; i++) {
+	if (timeline[i].eventList.includes("Present/Now")) {
+	    presentIdx = i;
+	}
+    }
+
+    var timelineArrows = document.getElementsByClassName("timelinearrow");
+    if (selectedNode.bucket === "past") {
+	for (var i = presentIdx + 1; i < timeline.length + 1; i++) {
+	    timelineArrows[i].className = "timelinearrow bad";
+	}
+
+	var futureBucket = document.getElementById("futurebucket");
+	var fbNodes = futureBucket.getElementsByClassName("node");
+	for (var i = 0; i < fbNodes.length; i++) {
+	    fbNodes[i].className = fbNodes[i].className + " bad";
+	}
+    } else if (selectedNode.bucket === "future") {
+	for (var i = 0; i < presentIdx + 1; i++) {
+	    timelineArrows[i].className = "timelinearrow bad";
+	}
+
+	var pastBucket = document.getElementById("pastbucket");
+	var pbNodes = pastBucket.getElementsByClassName("node");
+	for (var i = 0; i < pbNodes.length; i++) {
+	    pbNodes[i].className = pbNodes[i].className + " bad";
+	}
+    }
+}
+
+function reduceAllNodes() {
+    var expandedNodes = document.getElementsByClassName("expanded node");
+
+    if (expandedNodes.length === 0) {
+	return null;
+    }
+
+    reduceNode(expandedNodes[0]);
+}
+
+function reduceNode(node) {
+    node.className = "reduced node";
+    node.onclick = function () {
+	expandNode(node);
+    };
+
+    var nodeID = node.id.replace("sortnode","");
+    nodeID = nodeID.replace("un","");
+    var selectedNode = globalNodes[nodeID];
+    node.innerHTML = "<p>" + selectedNode.eventList[0] + "</p>";
+
+    var badTimeline = document.getElementsByClassName("timelinearrow bad");
+    for (var i = 0; i < badTimeline.length; i++) {
+	badTimeline[i].className = "timelinearrow";
+    }
+
+}
+
+function nodeToBucket(node,bucketElement) {
+    var nodeBlock = bucketElement.getElementsByClassName("nodeblock")[0];
+
+    var newElement = document.createElement("div");
+    newElement.className = "reduced node";
+    newElement.id = "unsortnode" + String(node.idx);
+    newElement.draggable = "true";
+    newElement.onclick = function () {
+	expandNode(newElement);
+    };
+    newElement.ondragstart = function(event) {
+	drag(event);
+    }
+    newElement.innerHTML = "<p>" + node.eventList[0] + "</p>";
+
+    nodeBlock.appendChild(newElement);
+}
+
+function loadBuckets() {
+    var pbElement = document.getElementById("pastbucket");
+    
+    pastBucket.forEach(function(value) {
+	nodeToBucket(value,pbElement);
+    });
+
+    var openPB = document.createElement("div");
+    openPB.innerHTML = "<h3>...</h3>";
+    pbElement.appendChild(openPB);
+
+    var fbElement = document.getElementById("futurebucket");
+
+    futureBucket.forEach(function(value) {
+	nodeToBucket(value,fbElement);
+    });
+
+    var openFB = document.createElement("div");
+    openFB.innerHTML = "<h3>...</h3>";
+    fbElement.appendChild(openFB);
+}
+
+function initializePage() {
+
+    // Start with fixed list of events
+    var pastEvent = new UnsortedNode("Past Event",0,"past");
+    pastEvent.eventList.push("Extra Info");
+    globalNodes.push(pastEvent);
+    var futureEvent = new UnsortedNode("Future Event",1,"future");
+    globalNodes.push(futureEvent);
+
+    var presentEvent = new SortedNode("Present/Now",2);
+    globalNodes.push(presentEvent);
+    timeline = [presentEvent];
+    
+    pastBucket = [pastEvent];
+    futureBucket = [futureEvent];
+
+    refreshTimeline();
+    loadBuckets();
+    
+}
