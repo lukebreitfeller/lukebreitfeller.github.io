@@ -760,11 +760,15 @@ function reduceBucket(bucketElement) {
 // Called every time the page loads. Initializes global variables, loads visuals, readies everything for later input.
 function initializePage() {
 
-    // Feature I would like to add, untested.
+    // This tool really cannot be used effectively on a mobile screen, it's just too small. This code checks for a mobile implementation.
     
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-	document.body.innerHTML = "<h2>THIS TOOL IS ONLY USABLE THROUGH A DESKTOP BROWSER. PLEASE SWITCH TO DESKTOP.</h2>";
+    var mobileBrowser = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (mobileBrowser) {
+	var mobileWarning = document.createElement("div");
+	mobileWarning.id = "mobilewarning";
+	mobileWarning.innerHTML = "<p>THIS TOOL IS ONLY USABLE THROUGH A DESKTOP BROWSER. PLEASE SWITCH TO DESKTOP.</p>";
+	document.body.innerHTML = "";
+	document.body.appendChild(mobileWarning);
 	return null;
     }
 
