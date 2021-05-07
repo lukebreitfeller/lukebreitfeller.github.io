@@ -60,7 +60,7 @@ function resizePage() {
 	for (var i = 0; i < timelineArrows.length; i++) {
 	    var thisArrow = timelineArrows[i];
 	    thisArrow.style.width = "50px";
-	    thisArrow.style.height = "600px";
+	    thisArrow.style.height = String(arrowLen) + "px";
 	    thisArrow.style.borderWidth = "0 5px 0 0";
 	}
 	
@@ -96,7 +96,7 @@ function resizePage() {
 	arrowRow.style.gridTemplateRows = "50px";
 	for (var i = 0; i < timelineArrows.length; i++) {
 	    var thisArrow = timelineArrows[i];
-	    thisArrow.style.width = "600px";
+	    thisArrow.style.width = String(arrowLen) + "px";
 	    thisArrow.style.height = "50px";
 	    thisArrow.style.borderWidth = "0 0 5px 0";
 	}
