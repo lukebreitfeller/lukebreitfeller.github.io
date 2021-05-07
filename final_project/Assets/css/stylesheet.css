@@ -1,8 +1,4 @@
-/* Header style information. */
-
-/* Body style information */
-
-/* Type-level rules in common across pages */
+/* Type-level rules for entire site */
 
 body {
     background-color: cornflowerblue;
@@ -16,11 +12,17 @@ h1 {
     margin-right: 100px;
 }
 
+/* Type-level rules for index page */
+
 h3 {
     text-align: center;
     color: lightgray;
     margin-top: 10px;
 }
+
+/* Class-level rules for index page */
+
+/* Textbox rules */
 
 span.sorted {
     background-color: lawngreen;
@@ -29,6 +31,34 @@ span.sorted {
 span.unsorted {
     background-color: goldenrod;
 }
+
+/* Timeline rules */
+
+.node {
+    background-color: aquamarine;
+    height: 50px;
+    width: 100px;
+}
+
+.node p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.timelinearrow {
+    border: solid black;
+    width: 600px;
+    height: 50px;
+    border-width: 0 0 5px 0;
+    margin: auto;
+}
+
+.bad.timelinearrow {
+    background-image: url("../images/badtimeline.png");
+    background-size: 100% 100%;
+}
+
+/* Bucket rules */
 
 .bucket {
     background-color: darkblue;
@@ -59,12 +89,7 @@ span.unsorted {
     padding-left: 25px;
 }
 
-.node {
-    background-color: aquamarine;
-/*    margin: auto;*/
-    height: 50px;
-    width: 100px;
-}
+/* This rule is for functions that have not been implemented at the time of the final project */
 
 /*.reduced {
     height: 50px;
@@ -72,6 +97,7 @@ span.unsorted {
 }*/
 
 .expanded {
+/* These attributes are for functions that have not been implemented at the time of the final project */
 /*    height: 150px;
     width: 150px;
     padding-top: 10px;*/
@@ -79,49 +105,42 @@ span.unsorted {
     border-width: 2px;
 }
 
-.eventblock {
+/* This rule is for functions that have not been implemented at the time of the final project */
+/*.eventblock {
     background-color: white;
     height: 120px;
     width: 120px;
     margin: auto;
-}
-
-.node p {
-    text-align: center;
-    font-size: 14px;
-}
+}*/
 
 .unsort.node {
     box-shadow: 3px 3px;
-}
-
-.boxexpand {
-    font-family: "Times New Roman";
-}
-
-.timelinearrow {
-    border: solid black;
-    width: 600px;
-    height: 50px;
-    border-width: 0 0 5px 0;
-    margin: auto;
-}
-
-/*.timelinearrow.vert {
-    width: 50px;
-    height: 600px;
-    border-width: 0 5px 0 0;
-}*/
-
-.bad.timelinearrow {
-    background-image: url("../images/badtimeline.png");
-    background-size: 100% 100%;
 }
 
 .bad.node {
     background-image: url("../images/badbucket.png");
     background-size: 100% 100%;
 }
+
+.boxexpand {
+    font-family: "Times New Roman";
+}
+
+/* ID-level rules */
+
+/* Textbox rules */
+
+#textbox {
+    background-color: white;
+    height: 300px;
+    width: 400px;
+}
+
+#textbox p {
+    margin: 10px;
+}
+
+/* Timeline rules */
 
 #timeline {
     display: grid;
@@ -140,11 +159,28 @@ span.unsorted {
     display: grid;
 }
 
-/*
-#toolsandsuch {
+#errbox {
+    background-color: darkgray;
+    height: 130px;
+    width: 200px;
+    margin: auto;
+}
+
+#errbox p {
+    text-align: center;
+}
+
+#errboxbuttons {
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+
+/* These rules are for functions that are not implemented yet in the final project */
+
+/*#toolsandsuch {
     display: grid;
     grid-template-columns: 100px 600px;
-}*/
+}
 
 #toolbar {
     background-color: darkgray;
@@ -152,10 +188,12 @@ span.unsorted {
     width: 75px;
 }
 
-/*#bucketarea {
+#bucketarea {
     display: grid;
     grid-template-rows: 150px 300px;
 }*/
+
+/* Bucket rules */
 
 #bucketrow {
     display: grid;
@@ -169,27 +207,7 @@ span.unsorted {
     grid-template-columns: 650px 50px;
 }
 
-#textbox {
-    background-color: white;
-    height: 300px;
-    width: 400px;
-}
-
-#textbox p {
-    margin: 10px;
-}
-
-#errbox {
-    background-color: darkgray;
-    height: 150px;
-    width: 150px;
-    margin: auto;
-}
-
-#errboxbuttons {
-    display: grid;
-    grid-template-columns: 75px 75px;
-}
+/* Rules for instruction page--there's only one we need specifically for the instructions page, just to make the text a little more readable. */
 
 #instructions {
     background-color: white;

@@ -17,18 +17,25 @@
       </div>
     </header>
 
+<!--Building row for droppable timeline, visible line, events on timeline -->
+
     <div id="timeline">
       <div id="arrowrow">
 	<div class="timelinearrow" id="timeline0" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="allowDrop(event)"></div>
 	<div class="timelinearrow" id="timeline1" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="allowDrop(event)"></div>
       </div>
+   <!--The timeline starts out empty and is filled by javascript. Frontpadding is needed to make the nodes align at the correct positions compared to the timeline segments.-->
       <div id="timelinelist">
 	<div id="frontpadding"></div>
       </div>
     </div>
 
+
+    <!--Later iterations of this webpage will have a toolbar for more advanced functions. I am keeping the underlying structure of tools + unsorted bottom row, but commenting out the toolbar itself.-->
     <div id="toolsandsuch">
-<!--      <div id="toolbar">
+
+      <!-- This is the script for the toolbar, which is not being implemented in this final project -->
+  <!--<div id="toolbar">
 	<div id="arrowtool">
 	  <p>Arrow</p>
 	</div>
@@ -43,10 +50,8 @@
 	</div>
       </div> -->
 
+  <!--The buckets start out blank and are filled by the js-->
       <div id="bucketrow">
-<!--	<div id="emptyspace"></div>
-
-	<div id="bucketrow">-->
 	<div class="bucket" id="pastbucket">
 	  <h3>Events In The Past</h3>
 	  <div class="nodeblock">
@@ -59,6 +64,7 @@
 	  </div>
 	</div>
 
+	<!--Later implementations will replace this with a file reference that users can change in order to annotate different text files. This text is processed by the javascript and used to generate the correct events in the interface.-->
 	<div id="textbox">
 	  <p>This tool was <span class="past unsorted">built</span> for use in human annotations for machine learning. Its aim is to take a text <span class="past unsorted">populated</span> with event mentions (words or phrases used to signify events within the narrative) and give trained human users the ability to <span class="future unsorted">organize</span> these events along a visual timeline. This process allows users to <span class="future unsorted">answer</span> questions about the chronological order of any events in the text more clearly and efficiently. The end goal is to <span class="future unsorted">extract</span> these timeline annotations for use in <span class="future unsorted">training</span> machine learning models</p>
 	</div>
