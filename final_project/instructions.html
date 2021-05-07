@@ -16,23 +16,25 @@
       </div>
     </header>
 
-    <h1>Instructions:</h1>
+    <div id="instructions">
+      <h2>Instructions:</h2>
 
-    <p>This tool is designed for use in human annotations for machine learning. Its aim is to take a text populated with event mentions (words or phrases used to signify events within the narrative) and give trained human users the ability to organize these events along a visual timeline. This process allows users to answer questions about the chronological order of any events in the text more clearly and efficiently. The end goal is to extract these timeline annotations for use in training machine learning models.</p>
+      <p>This tool is designed for use in human annotations for machine learning. Its aim is to take a text populated with event mentions (words or phrases used to signify events within the narrative) and give trained human users the ability to organize these events along a visual timeline. This process allows users to answer questions about the chronological order of any events in the text more clearly and efficiently. The end goal is to extract these timeline annotations for use in training machine learning models.</p>
 
-    <h2>Using the layout:</h2>
-    <p>The top half of the timeline page features the current version of the timeline.</p>
-    <p>The bottom half contains the Past Event Bucket, Future Event Bucket, and the text itself.</p>
-    <p>The past and future Buckets contain unsorted events that have not been placed on the timeline but have previously been annotated based on whether they take place in the past or future. As a default, the first three unsorted events per bucket will be shown, but the full list can be viewed by expanding the bucket (see Operations).</p>
-    <p>The text shows the original text the annotations are being applied to, with each event mention highlighted. Events that are currently unsorted are highlighted in dark yellow, while events that have been placed on the timeline are highlighted in bright green.</p>
-    <p>The advanced toolbar is located at the left edge of the page.</p>
+      <h2>Using the layout:</h2>
+      <p>The top half of the timeline page features the current version of the timeline.</p>
+      <p>The bottom half contains the Past Event Bucket, Future Event Bucket, and the text itself.</p>
+      <p>The past and future Buckets contain unsorted events that have not been placed on the timeline but have previously been annotated based on whether they take place in the past or future. As a default, the first three unsorted events per bucket will be shown, but the full list can be viewed by expanding the bucket (see Operations).</p>
+      <p>The text shows the original text the annotations are being applied to, with each event mention highlighted. Events that are currently unsorted are highlighted in dark yellow, while events that have been placed on the timeline are highlighted in bright green.</p>
+      <p>The advanced toolbar is located at the left edge of the page.</p>
 
-    <h2>Operations:</h2>
-    <p>Click on an event on the timeline or in a bucket to see more details about the event.</p>
-    <p>Clicking an event will also show which sections of the timeline the event logically should not be placed in (ex. a past event should not go after the "Present/Now" event).</p>
-    <p>Click on the . . . under the past or future bucket to see the full list of events in each bucket.</p>
-    <p>Dragging and dropping the event onto a section of the timeline will attach it to the timeline on that section, and reload the timeline display.</p>
-    <p>Dropping an event on a section of the timeline that has been x'd out will display an error message alerting the user that an attempt is being made to place an event where it logically should not go. Users can choose to override this and place the event at that location anyways, otherwise the event will return to its bucket.</p>
+      <h2>Operations:</h2>
+      <p>Click on an event on the timeline or in a bucket to see more details about the event.</p>
+      <p>Clicking an event will also show which sections of the timeline the event logically should not be placed in (ex. a past event should not go after the "Present/Now" event).</p>
+      <p>Click on the . . . under the past or future bucket to see the full list of events in each bucket.</p>
+      <p>Dragging and dropping the event onto a section of the timeline will attach it to the timeline on that section, and reload the timeline display.</p>
+      <p>Dropping an event on a section of the timeline that has been x'd out will display an error message alerting the user that an attempt is being made to place an event where it logically should not go. Users can choose to override this and place the event at that location anyways, otherwise the event will return to its bucket.</p>
+    </div>
 
   </body>
   

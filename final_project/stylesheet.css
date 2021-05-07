@@ -95,6 +95,10 @@ span.unsorted {
     box-shadow: 3px 3px;
 }
 
+.boxexpand {
+    font-family: "Times New Roman";
+}
+
 .timelinearrow {
     border: solid black;
     width: 600px;
@@ -103,11 +107,11 @@ span.unsorted {
     margin: auto;
 }
 
-.timelinearrow.vert {
+/*.timelinearrow.vert {
     width: 50px;
     height: 600px;
     border-width: 0 5px 0 0;
-}
+}*/
 
 .bad.timelinearrow {
     background-image: url("badtimeline.png");
@@ -185,4 +189,8 @@ span.unsorted {
 #errboxbuttons {
     display: grid;
     grid-template-columns: 75px 75px;
+}
+
+#instructions {
+    background-color: white;
 }
