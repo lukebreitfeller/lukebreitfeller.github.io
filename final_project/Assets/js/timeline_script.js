@@ -762,11 +762,11 @@ function initializePage() {
 
     // Feature I would like to add, untested.
     
-    //var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    //if (isMobile) {
-//	document.body.innerHTML = "<h2>THIS TOOL IS ONLY USABLE THROUGH A DESKTOP BROWSER. PLEASE SWITCH TO DESKTOP.</h2>";
-//	return null;
-    //    }
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+	document.body.innerHTML = "<h2>THIS TOOL IS ONLY USABLE THROUGH A DESKTOP BROWSER. PLEASE SWITCH TO DESKTOP.</h2>";
+	return null;
+    }
 
     // Want to call resize function each time size changes.
     window.onresize = function () {
