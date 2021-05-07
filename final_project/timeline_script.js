@@ -353,7 +353,7 @@ function expandNode(node) {
 
     reduceAllNodes();
     
-    node.className = "expanded node";
+    node.className = "expanded node unsort";
 //    node.innerHTML = "";
     node.onclick = function () {
 	reduceNode(node);
@@ -421,7 +421,7 @@ function reduceAllNodes() {
 }
 
 function reduceNode(node) {
-    node.className = "reduced node";
+    node.className = node.className.replace("expanded","reduced");
     node.onclick = function () {
 	expandNode(node);
     };
@@ -450,7 +450,7 @@ function reduceNode(node) {
 
     for (var i = 0; i < statList2.length; i++) {
 	var bBucket = statList2[i];
-	bBucket.className = "reduced node";
+	bBucket.className = bBucket.className.replace("bad","");
     }
     
 }
@@ -563,7 +563,7 @@ function nodeToBucket(node,bucketElement) {
     var nodeBlock = bucketElement.getElementsByClassName("nodeblock")[0];
 
     var newElement = document.createElement("div");
-    newElement.className = "reduced node";
+    newElement.className = "reduced node unsort";
     newElement.id = "unsortnode" + String(node.idx);
     newElement.draggable = "true";
     newElement.onclick = function () {
@@ -706,7 +706,7 @@ function initializePage() {
 
 	}
 
-	var presentEvent = new SortedNode("Present/Now",finalCount);
+	var presentEvent = new SortedNode("Present",finalCount);
 	globalNodes.push(presentEvent);
 	timeline = [presentEvent];
     	

@@ -91,6 +91,10 @@ span.unsorted {
     font-size: 14px;
 }
 
+.unsort.node {
+    box-shadow: 3px 3px;
+}
+
 .timelinearrow {
     border: solid black;
     width: 600px;
